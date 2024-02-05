@@ -1,0 +1,12 @@
+#########################################################################
+## None of this is required since trunk now natively supports tailwind ##
+#########################################################################
+
+# [build]
+# target = "./public/index.html"
+# dist = "dist"
+    
+# [[hooks]]
+# stage = "pre_build"
+# command = "sh"
+# command_arguments = ["-c", "./scripts/prebuild.sh && ./scripts/build.sh"]

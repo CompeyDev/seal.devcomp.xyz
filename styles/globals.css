@@ -9,8 +9,6 @@
   --accent: #c2a4d6;
 }
 @keyframes pulsate {
-
-  /* You can add more % with more colors! */
   0% {
     background-color: black;
     color: white
