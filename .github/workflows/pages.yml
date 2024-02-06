@@ -11,19 +11,19 @@ jobs:
     concurrency: ci-${{ github.ref }} 
     name: Test setup-lune action 
     runs-on: ubuntu-latest
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v2
-          - name: Install Rust Toolchain
-            uses: actions-rs/toolchain@v1
-          - name: Install `cargo-binstall` Command
-            run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-          - name: Install Trunk
-            run: cargo binstall --locked trunk
-          - name: Compile WASM Site
-            run: trunk build --release
-          - name: Deploy to GitHub Pages
-            uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                folder: build
-          
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install Rust Toolchain
+        uses: actions-rs/toolchain@v1
+      - name: Install `cargo-binstall` Command
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      - name: Install Trunk
+        run: cargo binstall --locked trunk
+      - name: Compile WASM Site
+        run: trunk build --release
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            folder: build
+      
