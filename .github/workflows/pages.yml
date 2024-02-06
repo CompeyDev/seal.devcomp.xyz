@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     concurrency: ci-${{ github.ref }} 
-    name: Test setup-lune action 
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
