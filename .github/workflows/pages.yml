@@ -24,11 +24,10 @@ jobs:
       - name: Install `cargo-binstall` Command
         run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
       - name: Install Trunk
-        run: cargo binstall --locked trunk
+        run: cargo binstall --locked --no-confirm trunk 
       - name: Compile WASM Site
         run: trunk build --release
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
-      
+          folder: dist      
