@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --accent: #c2a4d6;
+}
+@keyframes pulsate {
+  0% {
+    background-color: black;
+    color: white
+  }
+
+  50% {
+    background-color: white;
+    color: black
+  }
+
+  100% {
+    background-color: black;
+    color: white
+  }
+}
+
+::selection {
+  background: rgb(var(--accent));
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to center,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  animation: pulsate 10s ease-in-out infinite;
+}
