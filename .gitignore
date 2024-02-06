@@ -1,6 +1,5 @@
 # production
 /dist
-/styles/tailwind.css
 
 # misc
 .DS_Store
